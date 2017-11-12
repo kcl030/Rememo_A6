@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <title>ReMemo MyTasks</title>
+  <head>
+
+  <body style="background-color: lightyellow;">
+
+    <!-- Header for My Tasks -->
+    <div class="container">
+      <div class="row">
+        <a href="home.html"><img src="backbutton.png" height="75" width="75"/></a>
+        <div style="font-family: 'Cedarville Cursive', cursive; font-size: 100px; margin: 0 auto;">
+          My Tasks
+        </div>
+      </div>
+    </div>
+
+		<!-- List Items -->
+		<div class="container">
+			<div class="row">
+        <td bgcolor="#FFFFFF" style="line-height:10px;" colspan=3>&nbsp;</td>
+      </div>
+
+			<!-- Handlebars template for tasks -->
+				<script id="task-template" type="text/x-handlebars-template">
+					<div class="tasks">
+						<li>{{this}}
+						<!--- <button type="button" class="btn btn-sm" onclick="removeAll()">X</button> -->
+						</li>
+					</div>
+				</script>
+
+			<ul id="myTaskList">
+				<!-- local task list will be inserted here -->
+			</ul>
+
+			<div class="row">
+          <button id="AddTaskbutton" type="button" class="btn btn-warning btn-custom-block" data-toggle="modal" data-target="#addTask">Add Task</button>
+          <td bgcolor="#FFFFFF" style="line-width:5px;" colspan=3>&nbsp;</td>
+          <button id="ClearTaskbutton" type="button" class="btn btn-warning btn-custom-block" data-toggle="modal" onclick="removeAll()">Clear Tasks</button>
+      </div>
+
+		</div>
+
+		<!-- Modal for Adding task-->
+    <div id="addTask" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <h1>Add Task</h1>
+						<form id="addTask" action="/myTask.html">
+  						<label>Task: <br> </label><input type="text" name="newTask" id="newTask">
+						</form>
+						<br>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addTask()">Add</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>
+          </div>
+        </div>
+      </div>
+		</div>
+
+			<!-- storing and removing tasks -->
+			<script>
+				// local array
+				var taskArray = JSON.parse(localStorage.getItem("localArray"));
+				if (taskArray == null) {
+					taskArray = new Array;
+				}
+
+				//Add task function
+				function addTask() {
+					var taskToAdd = document.getElementById("newTask").value;
+					taskArray.push(taskToAdd);
+					var stringArray = JSON.stringify(taskArray);
+					localStorage.setItem("localArray", stringArray);
+					document.getElementById("newTask").value = "";
+					location.reload();
+				}
+
+				//Remove task function
+				function removeTask(theTask) {
+					var taskString = JSON.stringify(theTask);
+					prompt(taskString);
+					for (var a = 0; a < taskArray.length; a++) {
+						if (taskArray[a] == taskString) {
+							prompt("worked");
+							taskArray.resetList(a);
+							localStorage.setItem("localArray",taskArray);
+							break;
+						}
+						else {
+							continue;
+						}
+					}
+					location.reload();
+				}
+
+				// Helper to move tasks up in the array
+				function resetList(x) {
+					var arrayToSet = this;
+					for (var d = x; d < arrayToSet.length - 1; d++) {
+						arrayToSet[d] = arrayToSet [d+1];
+					}
+				}
+
+				function removeAll() {
+					localStorage.setItem("DeletedArray", JSON.parse(JSON.stringify(localStorage.getItem("localArray"))));
+					localStorage.setItem("localArray", null);
+					location.reload();
+				}
+
+			</script>
+
+
+  <!-- JS -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src ="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
+	<script src="js/MyTask.js"></script>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
