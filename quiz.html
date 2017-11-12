@@ -15,7 +15,7 @@
     <!-- The header of the page -->
     <div class="container">
       <div class="row">
-        <a href="home.html"><img src="backbutton.png" height="75" width="75"/></a>
+        <a href="index.html"><img src="whitebackbutton.png" height="75" width="75"/></a>
         <div style="font-family: 'Cedarville Cursive', cursive; font-size: 100px; margin: 0 auto;">
           Quiz
         </div>
@@ -59,7 +59,7 @@
             <h1>You have fantastic memory!</h1>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.href='home.html'">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.href='index.html'">Close</button>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
             <h1>Yikes you need to improve your memory!</h1>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.href='home.html'">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.href='index.html'">Close</button>
           </div>
         </div>
       </div>
@@ -185,15 +185,10 @@
     document.getElementById("button" + incorrect2).innerHTML = q2;
     document.getElementById("button" + incorrect3).innerHTML = q3;
 
-
     var CorrectString = "\"" + randomCorrectQ + "\"";
 
     document.getElementById("correction").innerHTML = "Yikes you need to improve your memory! <br />  The correct answer is " +  CorrectString;
   </script>
-
-
-
-
 
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
