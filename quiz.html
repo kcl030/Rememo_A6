@@ -185,7 +185,10 @@
     document.getElementById("button" + incorrect2).innerHTML = q2;
     document.getElementById("button" + incorrect3).innerHTML = q3;
 
-    document.getElementById("correction").innerHTML = "Yikes you need to improve your memory! The correct answer is " + correctIndex + " \"I need to take out the trash\"";
+
+    var CorrectString = "\"" + randomCorrectQ + "\"";
+
+    document.getElementById("correction").innerHTML = "Yikes you need to improve your memory! <br />  The correct answer is " +  CorrectString;
   </script>
 
 
