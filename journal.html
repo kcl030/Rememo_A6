@@ -54,13 +54,13 @@
           var JournalArray = JSON.parse(JournalArray1);
 
           if (JournalArray == null) {
-            document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from your list to add them to your journal.";
+            document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from My Tasks to add them to your journal.";
           }
 
           if (JournalArray[0] == null || JournalArray1 == null || JournalArray1 == 0 || JournalArray[0] == 0 ) {      //buggy if refreshed.
 
               var Nothing = document.createElement('div')
-              document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from your list to add them to your journal.";
+              document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from My Tasks to add them to your journal.";
               //document.body.append("You do not have anything in your Journal");    //Buggy on refresh
 
           }
@@ -116,7 +116,7 @@
             localStorage.setItem("DeletedArray", JSON.stringify(newJournal));
 
             if (JournalArray[0] == null || JournalArray1 == null || JournalArray1 == 0 || JournalArray[0] == 0 ) {
-              document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from your list to add them to your journal.";
+              document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from My Tasks to add them to your journal.";
                 //document.body.append("You do not have anything in your Journal");    //Buggy on refresh
             }
 
