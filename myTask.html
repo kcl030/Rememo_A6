@@ -115,18 +115,15 @@
 
 				function removeAll() {
 
-        //  var otherArray = localStorage.getItem("DeletedArray");
-      //    var pushArray = localStorage.getItem("localArray");
+          var otherArray = localStorage.getItem("DeletedArray");
+          var pushArray = localStorage.getItem("localArray");
 
-      //    if (otherArray == null){
-      //      localStorage.setItem("DeletedArray", pushArray);
-      //    } else {
-      //      var merged = JSON.parse(otherArray).concat(JSON.parse(pushArray));
-
-    //        localStorage.setItem("DeletedArray", merged);
-    //      }
-
-          localStorage.setItem("DeletedArray", localStorage.getItem("localArray"));
+          if(otherArray == null){
+            otherArray = [];
+          }else{
+            otherArray = JSON.parse(otherArray)
+          }
+          localStorage.setItem("DeletedArray", JSON.stringify(otherArray.concat(pushArray)));
 					localStorage.setItem("localArray", null);
 					location.reload();
 				}
