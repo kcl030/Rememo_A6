@@ -56,12 +56,12 @@
           <div class="modal-body">
             <h1>Add Task</h1>
 						<form id="addTask" action="/myTask.html">
-  						<label>Task: <br> </label><input type="text" name="newTask" id="newTask">
+  						<label>I need to: <br> </label><input type="text" name="newTask" id="newTask">
 						</form>
 						<br>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addTask()">Add</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addTask()">Sure!</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>
           </div>
         </div>
@@ -78,7 +78,8 @@
 
 				//Add task function
 				function addTask() {
-					var taskToAdd = document.getElementById("newTask").value;
+          var StringToAdd = "I need to "
+					var taskToAdd = StringToAdd + document.getElementById("newTask").value;
 					taskArray.push(taskToAdd);
 					var stringArray = JSON.stringify(taskArray);
 					localStorage.setItem("localArray", stringArray);
@@ -113,7 +114,19 @@
 				}
 
 				function removeAll() {
-					localStorage.setItem("DeletedArray", JSON.parse(JSON.stringify(localStorage.getItem("localArray"))));
+
+        //  var otherArray = localStorage.getItem("DeletedArray");
+      //    var pushArray = localStorage.getItem("localArray");
+
+      //    if (otherArray == null){
+      //      localStorage.setItem("DeletedArray", pushArray);
+      //    } else {
+      //      var merged = JSON.parse(otherArray).concat(JSON.parse(pushArray));
+
+    //        localStorage.setItem("DeletedArray", merged);
+    //      }
+
+          localStorage.setItem("DeletedArray", localStorage.getItem("localArray"));
 					localStorage.setItem("localArray", null);
 					location.reload();
 				}
