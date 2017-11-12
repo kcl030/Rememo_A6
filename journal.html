@@ -23,15 +23,12 @@
 
       <div class="row">
 
-        <div class="col-4">
+        <div class="col-3">
         </div>
-        <div id="emptyJournal" class="col-4">
-          <p id="demo"></p>
-          <script>
-            //document.getElementById("demo").innerHTML = Date();
-          </script>
+        <div id="emptyJournal" class="col-6">
+
         </div>
-        <div class="col-4">
+        <div class="col-3">
         </div>
     </div>
   </div>
@@ -57,13 +54,13 @@
           var JournalArray = JSON.parse(JournalArray1);
 
           if (JournalArray == null) {
-            document.getElementById("emptyJournal").innerHTML = "You do not have anything in your Journal";
+            document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from your list to add them to your journal.";
           }
 
           if (JournalArray[0] == null || JournalArray1 == null || JournalArray1 == 0 || JournalArray[0] == 0 ) {      //buggy if refreshed.
 
               var Nothing = document.createElement('div')
-              document.getElementById("emptyJournal").innerHTML = "You do not have anything in your Journal";
+              document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from your list to add them to your journal.";
               //document.body.append("You do not have anything in your Journal");    //Buggy on refresh
 
           }
@@ -119,7 +116,7 @@
             localStorage.setItem("DeletedArray", JSON.stringify(newJournal));
 
             if (JournalArray[0] == null || JournalArray1 == null || JournalArray1 == 0 || JournalArray[0] == 0 ) {
-              document.getElementById("emptyJournal").innerHTML = "You do not have anything in your Journal";
+              document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from your list to add them to your journal.";
                 //document.body.append("You do not have anything in your Journal");    //Buggy on refresh
             }
 
