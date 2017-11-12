@@ -80,6 +80,9 @@
 
   <!--Streak PUll -->
       <script>
+          if (localStorage.getItem("StreakNum") == null) {
+             localStorage.setItem("StreakNum",0);;
+          }
          	document.getElementById("StreakResult").innerHTML =
       		localStorage.getItem("StreakNum");
       </script>
