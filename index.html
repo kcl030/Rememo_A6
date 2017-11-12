@@ -79,7 +79,7 @@
 										<img src="images/pic04.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="index.html" class="link">Streak</a></h3>
+										<h3 id="StreakResult">Streak + </h3>
 									</header>
 								</article>
 							</section>
@@ -108,9 +108,9 @@
 		      if (localStorage.getItem("StreakNum") == null) {
 		         localStorage.setItem("StreakNum",0);
 		      }
-		     	document.getElementById("StreakResult").innerHTML =
+		     	document.getElementById("StreakResult").innerHTML = "Streak: " +
 		  		localStorage.getItem("StreakNum");
-		  </script>
 
+		  </script>
 	</body>
 </html>
