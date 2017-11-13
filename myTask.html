@@ -29,11 +29,11 @@
 
 			<div class="row">
 				<script>
-					function append ( elString, parent ) {
-						var div = document.createElement( "p" );
-						div.innerHTML = elString;
-						document.querySelector( parent || "body" ).appendChild( div.firstChild );
-					}
+					//function append ( elString, parent ) {
+						//var div = document.createElement( "p" );
+						//div.innerHTML = elString;
+						//document.querySelector( parent || "body" ).appendChild( div.firstChild );
+					//}
 
 					// Retrieving tasks from Task List
 					var TaskArray1 = JSON.parse(localStorage.getItem("localArray"));                                                        //CHANGE THIS ARRAY NAME
@@ -95,6 +95,7 @@
 							}
 
 							localStorage.setItem("localArray", JSON.stringify(newTaskList));
+							location.reload();
 						}
 					}
 					</script>
