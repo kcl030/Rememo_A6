@@ -122,12 +122,16 @@
           var otherArray = localStorage.getItem("DeletedArray");
           var pushArray = localStorage.getItem("localArray");
 
+					// Initializing cleared task array if empty
           if(otherArray == null){
             otherArray = [];
           }else{
-            otherArray = JSON.parse(otherArray)
+            otherArray = JSON.parse(otherArray);
           }
-          localStorage.setItem("DeletedArray", JSON.stringify(otherArray.concat(pushArray)));
+
+					var stringversion = JSON.parse(pushArray);
+
+          localStorage.setItem("DeletedArray", JSON.stringify(otherArray.concat(stringversion)));
 					localStorage.setItem("localArray", null);
 					location.reload();
 				}
