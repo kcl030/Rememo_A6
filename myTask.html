@@ -36,7 +36,7 @@
 					}
 
 					// Retrieving tasks from Task List
-					var TaskArray1  =  JSON.parse(localStorage.getItem("localArray"));                                                        //CHANGE THIS ARRAY NAME
+					var TaskArray1 = JSON.parse(localStorage.getItem("localArray"));                                                        //CHANGE THIS ARRAY NAME
 
 					// Adds each task as a list item
 					for(var t in TaskArray1){
@@ -87,9 +87,11 @@
 								}
 								else {
 									alert("pushing to journal");
-									deletedArray1 = JSON.parse(localStorage.getElementById("DeletedArray"));
-									taskString = taskItem.id;
-									deletedArray1.push(taskString);
+									deletedArray1 = JSON.parse(localStorage.getItem("DeletedArray"));
+									if (deletedArray1 == null) {
+										deletedArray1 = [];
+									}
+									deletedArray1.push(TaskArray1[j]);
 		          		localStorage.setItem("DeletedArray", JSON.stringify(deletedArray1));
 								}
 							}
@@ -205,7 +207,7 @@
   <script src ="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 	<script src="js/handlebars-v4.0.11.js"></script>
-	<script src="js/MyTask.js"></script>
+	<!-- <script src="js/MyTask.js"></script> -->
 
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="js/ie10-viewport-bug-workaround.js"></script>
