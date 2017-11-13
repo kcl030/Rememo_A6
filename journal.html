@@ -65,7 +65,7 @@
 
             var Container = document.createElement('div');
             Container.className = 'container';
-						
+
             var InfoCol = document.createElement('div');
             InfoCol.className = 'xs col-8';
 
@@ -95,27 +95,26 @@
           while(i--){
             //button that hides the task
             close[i].onclick = function() {
-            var div = this.parentElement;
-            div.style.display = "none";
+            	var div = this.parentElement;
+            	div.style.display = "none";
 
-            //removes task from Journal Array and remakes journal array
-            newJournal = [];
-            for (i = 0, j = JournalArray.length; i < j; i++) {
+            	//removes task from Journal Array and remakes journal array
+            	newJournal = [];
+            	for (i = 0, j = JournalArray.length; i < j; i++) {
                 cur = JournalArray[i];
                 if (cur != div.Id) {
                     newJournal.push(cur);
                 }
-            }
-            JournalArray = newJournal;
+            	}
+            	JournalArray = newJournal;
 
-            localStorage.setItem("DeletedArray", JSON.stringify(newJournal));
+            	localStorage.setItem("DeletedArray", JSON.stringify(newJournal));
 
-            if (JournalArray[0] == null || JournalArray1 == null || JournalArray1 == 0 || JournalArray[0] == 0 ) {
-              document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from <strong> My Tasks </strong> to add them to your journal.";
-                //document.body.append("You do not have anything in your Journal");    //Buggy on refresh
-            }
+            	if (JournalArray[0] == null || JournalArray1 == null || JournalArray1 == 0 || JournalArray[0] == 0 ) {
+              	document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from <strong> My Tasks </strong> to add them to your journal.";
+            	}
 
-          }
+          	}
           }
 
         </script>
