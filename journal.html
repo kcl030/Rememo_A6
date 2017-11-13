@@ -41,17 +41,14 @@
       <div class="row">
         <script>
 
-        function append ( elString, parent ) {
-           var div = document.createElement( "p" );
-           div.innerHTML = elString;
-           document.querySelector( parent || "body" ).appendChild( div.firstChild );
-        }
+        	function append ( elString, parent ) {
+          	var div = document.createElement( "p" );
+          	div.innerHTML = elString;
+          	document.querySelector( parent || "body" ).appendChild( div.firstChild );
+        	}
 
-          //localStorage.setItem("DeletedArray", JSON.stringify([]));                                                          // debugging line.
-          //localStorage.setItem("DeletedArray", JSON.stringify(["I need to take out trash","I need to walk the dog"]));       // debugging line.
-
-          var JournalArray1  =  localStorage.getItem("DeletedArray");                                                        //CHANGE THIS ARRAY NAME
-          var JournalArray = JSON.parse(JournalArray1);
+        	var JournalArray1  =  localStorage.getItem("DeletedArray");                                                        //CHANGE THIS ARRAY NAME
+        	var JournalArray = JSON.parse(JournalArray1);
 
           if (JournalArray == null) {
             document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from <strong> My Tasks </strong> to add them to your journal.";
@@ -61,7 +58,6 @@
 
               var Nothing = document.createElement('div')
               document.getElementById("emptyJournal").innerHTML = "The journal stores your old tasks that you completed. <br /> Clear Tasks from <strong> My Tasks </strong> to add them to your journal.";
-              //document.body.append("You do not have anything in your Journal");    //Buggy on refresh
 
           }
 
@@ -87,11 +83,11 @@
           var myNodelist = document.getElementsByTagName("LI");
           var i;
           for (i = 0; i < myNodelist.length; i++) {
-          var span = document.createElement("SPAN");
-          var txt = document.createTextNode("\u00D7");
-          span.className = "close";
-          span.appendChild(txt);
-          myNodelist[i].appendChild(span);
+          	var span = document.createElement("SPAN");
+          	var txt = document.createTextNode("\u00D7");
+          	span.className = "close";
+          	span.appendChild(txt);
+          	myNodelist[i].appendChild(span);
           }
 
           // Click on a close button to hide the current list item
