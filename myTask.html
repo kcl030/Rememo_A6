@@ -80,6 +80,10 @@
 				function addTask() {
           var StringToAdd = "I need to "
 					var taskToAdd = StringToAdd + document.getElementById("newTask").value;
+					if (document.getElementById("newTask").value.length == 0) {
+						alert("Please enter a task");
+						return 0;
+					}
 					taskArray.push(taskToAdd);
 					var stringArray = JSON.stringify(taskArray);
 					localStorage.setItem("localArray", stringArray);
