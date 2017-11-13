@@ -31,7 +31,7 @@
 				<script id="task-template" type="text/x-handlebars-template">
 					<div class="tasks">
 						<li>{{this}}
-						<!--- <button type="button" class="btn btn-sm" onclick="removeAll()">X</button> -->
+						<!-- <button type="button" class="btn btn-sm" onclick="removeTask()">X</button> -->
 						</li>
 					</div>
 				</script>
@@ -61,7 +61,7 @@
 						<br>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addTask()">Sure!</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addTask()">Rememo!</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>
           </div>
         </div>
@@ -94,10 +94,8 @@
 				//Remove task function
 				function removeTask(theTask) {
 					var taskString = JSON.stringify(theTask);
-					prompt(taskString);
 					for (var a = 0; a < taskArray.length; a++) {
 						if (taskArray[a] == taskString) {
-							prompt("worked");
 							taskArray.resetList(a);
 							localStorage.setItem("localArray",taskArray);
 							break;
