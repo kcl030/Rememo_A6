@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.css"/>
 
     <link rel="stylesheet" href="css/signin.css"/>
-    <title>ReMemo Login</title>
+    <title>ReMemo Help</title>
   <head>
 
   <!-- Script to make counter fancy    NOT WORKING -->
@@ -23,35 +23,38 @@
       <div class="row">
         <a href="index.html"><img src="whitebackbutton.png" height="75" width="75"/></a>
         <div style="font-family: 'Cedarville Cursive', cursive; font-size: 150px; margin: 0 auto; color: #FFFFFF">
-          ReMemo
+          Help
         </div>
       </div>
     </div>
 
-    <!-- Buttons that link to other pages -->
+    <!-- Documentation of how to use ReMemo -->
     <div class="container">
-      <div class="row">
-        <div class="col-4">
-        </div>
-        <div class="col-4">
-
-          <form class="form-signin" action ="index.html">
-            <h2 class="form-signin-heading" style="color: #FFFFFF;">Login</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div class="checkbox">
-              <label style="color:#FFFFFF;">
-                <input type="checkbox" value="remember-me"> Remember me
-              </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-          </form>
-        </div>
-        <div class="col-4">
-        </div>
-      </div>
+      <h2 style="color: #FFFFFF;">My Tasks</h2>
+      <p style="color: #FFFFFF;">
+        In <strong>My Tasks</strong> you add tasks that you do not want to forget.
+        The tasks will autopopulate with "I need to" before the inputted task.
+        You can clear all the tasks by clicking "Clear All."  Clearing the tasks
+        will journal all of the tasks.  You must add a task before you take a quiz.
+      </p>
+      <h2 style="color: #FFFFFF;">Quiz</h2>
+      <p style="color: #FFFFFF;">
+        The <strong>Quiz</strong> allows you to rehearse the tasks you need to do
+        for the day.  Upon getting a correct answer, your streak will increase by
+        one point.  If you get a wrong answer, the streak will reset to zero.
+        You cannot take a quiz unless you have added a task already.
+      </p>
+      <h2 style="color: #FFFFFF;">Journal</h2>
+      <p style="color: #FFFFFF;">
+        The <strong>Journal</strong> allows you to remember tasks that you have
+        cleared because you are done rehearsing for the day.  If you do not want a
+        task to be journaled, you can remove them with the "x" button.
+      </p>
+      <h2 style="color: #FFFFFF;">Streak</h2>
+      <p style="color: #FFFFFF;">
+        The <strong>Streak</strong> will increase by one point if you get a correct
+        answer on the quiz.  It will reset to zero if you get a wrong answer.
+      </p>
     </div>
   </body>
 
