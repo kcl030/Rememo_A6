@@ -116,22 +116,6 @@ ol ul,
 ul ol {
   margin-bottom: 0; }
 
-
-ul.tasklist {
-	list-style-type: square;
-	padding: 40px;
-	margin: 20px;
-}
-
-li.task {
-	color: orange;
-}
-
-li.task span {
-	color: black;
-}
-
-
 dt {
   font-weight: bold; }
 
