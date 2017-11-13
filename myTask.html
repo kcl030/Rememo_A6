@@ -83,10 +83,8 @@
 							for (j = 0; j < TaskArray1.length; j++) {
 								if (TaskArray1[j] != taskItem.Id) {
 									newTaskList.push(TaskArray1[j]);
-									alert("debug");
 								}
 								else {
-									alert("pushing to journal");
 									deletedArray1 = JSON.parse(localStorage.getItem("DeletedArray"));
 									if (deletedArray1 == null) {
 										deletedArray1 = [];
