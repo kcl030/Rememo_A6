@@ -1176,7 +1176,7 @@
 
 	}
 
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 370px) {
 
 		.row > * {
 			padding: 0 0 0 1.25em;
@@ -1616,7 +1616,7 @@
 		-ms-overflow-style: scrollbar;
 	}
 
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 370px) {
 
 		html, body {
 			min-width: 320px;
@@ -1917,7 +1917,7 @@
 
 		}
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 370px) {
 
 			form .field.half {
 				width: 100%;
@@ -2428,7 +2428,7 @@
 					padding-left: 0.75em;
 				}
 
-			@media screen and (max-width: 480px) {
+			@media screen and (max-width: 370px) {
 
 				ul.pagination li:nth-child(n+2):nth-last-child(n+2) {
 					display: none;
@@ -2917,7 +2917,7 @@
 
 		}
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 370px) {
 
 			.tiles {
 				display: block;
@@ -3376,7 +3376,7 @@
 
 		}
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 370px) {
 
 			#header .logo span {
 				display: none;
@@ -3602,7 +3602,7 @@
 
 		}
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 370px) {
 
 			#banner {
 				padding: 6em 0 2em 0 ;
@@ -3760,7 +3760,7 @@
 				padding-left: 0;
 			}
 
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 370px) {
 
 		#footer .copyright li {
 			display: block;
