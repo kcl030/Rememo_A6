@@ -27,7 +27,82 @@
         <td bgcolor="#FFFFFF" style="line-height:10px;" colspan=3>&nbsp;</td>
       </div>
 
-			<!-- Handlebars template for tasks -->
+			<div class="row">
+				<script>
+					function append ( elString, parent ) {
+						var div = document.createElement( "p" );
+						div.innerHTML = elString;
+						document.querySelector( parent || "body" ).appendChild( div.firstChild );
+					}
+
+					// Retrieving tasks from Task List
+					var TaskArray1  =  JSON.parse(localStorage.getItem("localArray"));                                                        //CHANGE THIS ARRAY NAME
+
+					// Adds each task as a list item
+					for(var t in TaskArray1){
+						var Container = document.createElement('div');
+						Container.className = 'container';
+
+						var InfoCol = document.createElement('div');
+						InfoCol.className = 'xs col-8';
+
+						var newTaskElement = document.createElement('li');
+						newTaskElement.className = "task";
+						newTaskElement.innerHTML = TaskArray1[t];
+						newTaskElement.Id = TaskArray1[t];
+
+						InfoCol.appendChild(newTaskElement);
+						Container.appendChild(InfoCol);
+						document.body.appendChild(Container)
+					}
+
+					// Create a "close" button and append it to each list item
+					var myNodelist = document.getElementsByTagName("LI");
+					var i;
+					for (i = 0; i < myNodelist.length; i++) {
+						var span = document.createElement("SPAN");
+						var txt = document.createTextNode("\u00D7");
+						span.className = "close";
+						span.appendChild(txt);
+						myNodelist[i].appendChild(span);
+					}
+
+					// Click on a close button to hide the current list item
+					var close = document.getElementsByClassName("close");
+					var i = close.length;
+					while(i > 0){
+						i--;
+						//button that hides the task
+						close[i].onclick = function() {
+							var taskItem = this.parentElement;
+							taskItem.style.display = "none";
+
+							//removes task from Task Array and remakes task array
+							newTaskList = [];
+
+							for (j = 0; j < TaskArray1.length; j++) {
+								if (TaskArray1[j] != taskItem.Id) {
+									newTaskList.push(TaskArray1[j]);
+									alert("debug");
+								}
+								else {
+									alert("pushing to journal");
+									deletedArray1 = JSON.parse(localStorage.getElementById("DeletedArray"));
+									taskString = taskItem.id;
+									deletedArray1.push(taskString);
+		          		localStorage.setItem("DeletedArray", JSON.stringify(deletedArray1));
+								}
+							}
+
+							localStorage.setItem("localArray", JSON.stringify(newTaskList));
+						}
+					}
+					</script>
+				</div>
+
+
+
+			<!-- Handlebars template for tasks
 				<script id="task-template" type="text/x-handlebars-template">
 					<div class="tasks">
 						<li> {{this}} <button type="button" class="btn btn-sm" onclick="removeTask()">X</button> </li>
@@ -35,8 +110,8 @@
 				</script>
 
 			<ul id="myTaskList">
-				<!-- local task list will be inserted here -->
-			</ul>
+				 local task list will be inserted here
+			</ul> -->
 
 			<div class="row">
           <button id="AddTaskbutton" type="button" class="btn btn-default btn-custom-block" data-toggle="modal" data-target="#addTask">Add Task</button>
@@ -86,22 +161,6 @@
 					var stringArray = JSON.stringify(taskArray);
 					localStorage.setItem("localArray", stringArray);
 					document.getElementById("newTask").value = "";
-					location.reload();
-				}
-
-				//Remove task function
-				function removeTask(theTask) {
-					var taskString = JSON.stringify(theTask);
-					for (var a = 0; a < taskArray.length; a++) {
-						if (taskArray[a] == taskString) {
-							taskArray.resetList(a);
-							localStorage.setItem("localArray",taskArray);
-							break;
-						}
-						else {
-							continue;
-						}
-					}
 					location.reload();
 				}
 
