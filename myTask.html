@@ -130,7 +130,8 @@
           <div class="modal-body">
             <h1>Add Task</h1>
 						<form id="addTask" action="/myTask.html">
-  						<label>I need to: <br> </label><input type="text" name="newTask" id="newTask">
+  						<label>I need to: <br> </label><input type="text" name="newTask" id="newTask"> <br>
+              <label>Time (ex. 2:30pm): <br> </label><input type="text" name="time" id = "time">
 						</form>
 						<br>
           </div>
@@ -154,6 +155,8 @@
 				function addTask() {
           var StringToAdd = "I need to "
 					var taskToAdd = StringToAdd + document.getElementById("newTask").value;
+          taskToAdd = taskToAdd + " at ";
+          taskToAdd = taskToAdd + document.getElementById("time").value;
 					if (document.getElementById("newTask").value.length == 0) {
 						alert("Please enter a task");
 						return 0;

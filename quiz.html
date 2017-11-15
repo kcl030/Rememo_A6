@@ -136,22 +136,22 @@
     //generates the random questions to be asked in the quiz
     function randomQuestions() {
       var question = new Array(10)
-      question[0] = "I need to do groceries";
-      question[1] = "I need to fold clothes";
-      question[2] = "I need to do the dishes";
-      question[3] = "I need to do the laundry";
-      question[4] = "I need to cook dinner";
-      question[5] = "I need to water the plants";
-      question[6] = "I need to vacuum";
-      question[7] = "I need to go to the gym";
-      question[8] = "I need to pay the bills";
-      question[9] = "I need to get a haircut";
-      question[10] = "I need to make lunch";
+      question[0] = "I need to do groceries at 3:30pm";
+      question[1] = "I need to fold clothes at 2:45pm";
+      question[2] = "I need to do the dishes at 5:00pm";
+      question[3] = "I need to do the laundry at 2:15pm";
+      question[4] = "I need to cook dinner at 5:30pm";
+      question[5] = "I need to water the plants at 8:00am";
+      question[6] = "I need to vacuum at 9:30am";
+      question[7] = "I need to go to the gym at 1:30pm";
+      question[8] = "I need to pay the bills at 2:00pm";
+      question[9] = "I need to get a haircut at 3:30pm";
+      question[10] = "I need to make lunch at 11:00am";
 
       var randomNum = Math.floor(Math.random()*question.length);
       return question[randomNum];
     }
-    
+
 		var randomCorrectQ = randomCorrect();
 
     //hides quiz if MyTask is empty
