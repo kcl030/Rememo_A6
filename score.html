@@ -26,10 +26,10 @@
     <div class="container">
 
       <div class="row">
-        <h3 id="StreakResult">Current Score:</h3>
+        <h3 id="StreakResult1">Global High Score:</h3>
       </div>
       <div class="row">
-        <h3 id="StreakResult">High Score:</h3>
+        <h3 id="StreakResult">Current Score:</h3>
       </div>
 
     </div>
@@ -41,6 +41,13 @@
       }
       document.getElementById("StreakResult").innerHTML = "Current Score: " +
       localStorage.getItem("StreakNum");
+
+      if (localStorage.getItem("StreakNum") > 5) {
+        document.getElementById("StreakResult1").innerHTML = "Global High Score: " +
+        localStorage.getItem("StreakNum");
+      } else {
+        document.getElementById("StreakResult1").innerHTML = "Global High Score: 5"
+      }
 
   </script>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
