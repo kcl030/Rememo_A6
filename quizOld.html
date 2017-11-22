@@ -98,19 +98,9 @@
 				if (localStorage.getItem("StreakNum") == null) {
 					localStorage.setItem("StreakNum", 0);
 				}
-        if (localStorage.getItem("StreakHigh") == null) {
-          localStorage.setItem("StreakHigh", 0);
-        }
         var result = parseInt(localStorage.getItem("StreakNum")) + 1 ;
         var resultS = result.toString();
         localStorage.setItem("StreakNum", resultS);
-
-        var highScore = localStorage.getItem("StreakHigh");
-        if(result > highScore) {
-          highScore = result;
-        }
-        var highScoreS = highScore.toString();
-        localStorage.setItem("StreakHigh", highScoreS);
 
     }
 
