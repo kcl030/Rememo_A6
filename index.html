@@ -88,8 +88,8 @@
 									<span class="image">
 										<img src="images/pic04.jpg" alt="" />
 									</span>
-									<header class="major">
-										<h3><a href="score.html" class="link">Score</a></h3>
+									<header id= "ScoreButton" class="major">
+										<h3><a href="score.html" class="link" onclick = "Tracker();">Score</a></h3>
 									</header>
 								</article>
 							</section>
@@ -112,6 +112,20 @@
 		  <script src="js/bootstrap.min.js"></script>
 		  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		  <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+
+
+			<!-- Tracker for Button Clicker -->
+			<script type="text/javascript">
+			function Tracker(){
+			 console.log("like button clicked");
+			 // tracker code here,
+			 tracker = ga.getAll()[0];
+			 tracker.send('event', 'Scorebutton', 'click');
+
+		  }
+			</script>
+
 
 	</body>
 </html>
