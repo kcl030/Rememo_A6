@@ -18,6 +18,18 @@
 		<meta name="author" content="">
 		<link rel="stylesheet" href="css/counterstyle.css"/>
 		<title>ReMemo Homepage</title>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110395114-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-110395114-1');
+		</script>
+
+
 	</head>
   <body>
 
@@ -78,8 +90,8 @@
 									<span class="image">
 										<img src="images/pic04.jpg" alt="" />
 									</span>
-									<header class="major">
-										<h3 id="StreakResult">Streak + </h3>
+									<header class="major" id= "ScoreButton">
+										<h3 id="StreakResult"  onclick = "Tracker();">Streak + </h3>
 									</header>
 								</article>
 							</section>
@@ -112,5 +124,18 @@
 		  		localStorage.getItem("StreakNum");
 
 		  </script>
+
+			<!-- Tracker for Button Clicker -->
+			<script type="text/javascript">
+			function Tracker(){
+			 console.log("button clicked");
+			 // tracker code here,
+			 tracker = ga.getAll()[0];
+			 tracker.send('event', 'Scorebutton', 'click');
+
+		  }
+			</script>
+
+
 	</body>
 </html>
