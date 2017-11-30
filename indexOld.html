@@ -31,6 +31,18 @@
 		</script><script>utmx('url','A/B');</script>
 		<!-- End of Google Analytics Content Experiment code -->
 
+		<!-- Tracker for Button Clicker -->
+		<script type="text/javascript">
+		function Tracker(){
+		 console.log("button clicked");
+		 // tracker code here,
+		 tracker = ga.getAll()[0];
+		 tracker.send('event', 'Streak', 'click');
+		}
+		</script>
+
+		<!-- Rememo code starts here-->
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -105,7 +117,7 @@
 									<span class="image">
 										<img src="images/pic04.jpg" alt="" />
 									</span>
-									<header class="major" id= "ScoreButton">
+									<header class="major" id= Streak">
 										<h3 id="StreakResult"  onclick = "Tracker();">Streak + </h3>
 									</header>
 								</article>
@@ -139,17 +151,6 @@
 		  		localStorage.getItem("StreakNum");
 
 		  </script>
-
-			<!-- Tracker for Button Clicker -->
-			<script type="text/javascript">
-			function Tracker(){
-			 console.log("button clicked");
-			 // tracker code here,
-			 tracker = ga.getAll()[0];
-			 tracker.send('event', 'Streak', 'click');
-
-		  }
-			</script>
 
 
 	</body>

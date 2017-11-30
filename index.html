@@ -31,6 +31,19 @@
 		</script><script>utmx('url','A/B');</script>
 		<!-- End of Google Analytics Content Experiment code -->
 
+
+		<!-- Tracker for Button Clicker -->
+		<script type="text/javascript">
+		function Tracker(){
+		 console.log("button clicked");
+		 // tracker code here,
+		 tracker = ga.getAll()[0];
+		 tracker.send('event', 'Scorebutton', 'click');
+		}
+		</script>
+
+		<!-- Rememo code starts here-->
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -44,10 +57,6 @@
 		<link rel="stylesheet" href="css/counterstyle.css"/>
 		<title>ReMemo Homepage</title>
 	</head>
-
-	<!-- Google Analytics code -->
-
-	<!-- End of Google Analytics code -->
 
   <body>
 
@@ -132,19 +141,6 @@
 		  <script src="js/bootstrap.min.js"></script>
 		  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		  <script src="js/ie10-viewport-bug-workaround.js"></script>
-
-
-			<!-- Google Analytics code -->
-			<!-- Tracker for Button Clicker -->
-			<script type="text/javascript">
-			function Tracker(){
-			 console.log("button clicked");
-			 // tracker code here,
-			 tracker = ga.getAll()[0];
-			 tracker.send('event', 'Scorebutton', 'click');
-		  }
-			</script>
-			<!-- End of Google Analytics code -->
 
 
 	</body>
